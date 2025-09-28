@@ -1,0 +1,5 @@
+{
+  "name": "Log Analyzer",
+  "description": "An application to upload and analyze log files. It counts specific error and info messages based on user-defined patterns.",
+  "requestFramePermissions": []
+}
