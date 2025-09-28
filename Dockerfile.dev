@@ -1,0 +1,17 @@
+# Development Dockerfile (fast feedback with volumes & nodemon)
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install dev deps
+COPY package*.json ./
+RUN npm install
+
+# Copy everything (source will be overridden by bind mount in dev)
+COPY . .
+
+# Expose the port your app uses (change if different)
+EXPOSE 3000
+
+# Use the dev script (assumes you have "dev" script e.g. nodemon or ts-node-dev)
+CMD ["npm", "run", "dev"]
